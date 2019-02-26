@@ -8,6 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet Filter implementation class SessionFilter
@@ -33,11 +35,19 @@ public class SessionFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-
-		// pass the request along the filter chain
-		chain.doFilter(request, response);
+		
+		HttpServletRequest httpServletRequest = (HttpServletRequest)request;
+		
+		if(httpServletRequest.getSession().getAttribute("usuario") == null) {
+			
+			HttpServletResponse httpServletResponse = (HttpServletResponse)response;
+			
+			httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/nonsecure/jsp/Login.jsp");
+			
+		} else {
+			
+			chain.doFilter(request, response);
+		}
 	}
 
 	/**
