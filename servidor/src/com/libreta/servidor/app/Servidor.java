@@ -20,7 +20,7 @@ public class Servidor {
 		
 		LocateRegistry.createRegistry(1099);
 		System.out.println("Server levantado en puerto 1099");
-		Naming.rebind("//localhost/libreta_legajos_server", new ClienteWebRemoteObjectImpl());
+		Naming.rebind("//localhost/clienteWebRemoteObjectImpl", new ClienteWebRemoteObjectImpl());
 
 	}
 
