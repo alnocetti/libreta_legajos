@@ -16,6 +16,11 @@
     <servlet-class>com.libreta.cliente_web.servlets.LoginServlet</servlet-class>
   </servlet>
   <servlet>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.libreta.cliente_web.servlets.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
     <display-name>HomeServlet</display-name>
     <servlet-name>HomeServlet</servlet-name>
     <servlet-class>com.libreta.cliente_web.servlets.HomeServlet</servlet-class>
@@ -24,21 +29,22 @@
     <filter-name>SessionFilter</filter-name>
     <url-pattern>/secure/*</url-pattern>
   </filter-mapping>
-  
   <servlet-mapping>
     <servlet-name>AltaPersonaServlet</servlet-name>
     <url-pattern>/secure/servlets/AltaPersonaServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/nonsecure/servlets/LoginServlet</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/secure/servlets/LogoutServlet</url-pattern>
+  </servlet-mapping>  
+  <servlet-mapping>
     <servlet-name>HomeServlet</servlet-name>
     <url-pattern>/secure/servlets/HomeServlet</url-pattern>
   </servlet-mapping>
-  
   <welcome-file-list>
     <welcome-file>nonsecure/jsp/Login.jsp</welcome-file>
   </welcome-file-list>

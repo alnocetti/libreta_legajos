@@ -6,19 +6,23 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <script type="text/javascript" src="<%=request.getContextPath()%>/nonsecure/static/js/Alert.js"></script>
 
-<!------ Include the above in your HEAD tag ---------->
 <title>Alta empleados</title>
 </head>
 <body>
 
-
+<jsp:include page="includes/Menu.jsp" />
 <div class="container">
-
+	
     <c:if test="${status == 'success'}">
     <div class="row">    
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -44,85 +48,61 @@
 	   		<h1>Alta empleados</h1>
 	   	</div>
 	   </div>
-       <table class="table table-striped">
-          <tbody>
-             <tr>
-                <td colspan="1">
-                   <form class="well form-horizontal" method="post" action="<%=request.getContextPath()%>/secure/servlets/AltaPersonaServlet">
-                      <fieldset>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Nombre</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="nombre" name="nombre" placeholder="Nombre" class="form-control" required="true" value="" type="text"></div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Apellido</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="apellido" name="apellido" placeholder="Apellido" class="form-control" required="true" value="" type="text"></div>
-                            </div>
-                         </div>                         
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Address Line 1</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="addressLine1" placeholder="Address Line 1" class="form-control" required="true" value="" type="text"></div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Address Line 2</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="addressLine2" placeholder="Address Line 2" class="form-control" required="true" value="" type="text"></div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">City</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="city" placeholder="City" class="form-control" required="true" value="" type="text"></div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">State/Province/Region</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="state" placeholder="State/Province/Region" class="form-control" required="true" value="" type="text"></div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Postal Code/ZIP</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="postcode" placeholder="Postal Code/ZIP" class="form-control" required="true" value="" type="text"></div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Country</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group">
-                                  <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                                  <select class="selectpicker form-control">
-                                     <option>A really long option to push the menu over the edget</option>
-                                  </select>
-                               </div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Email</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="email" name="email" placeholder="Email" class="form-control" required="true" value="" type="text"></div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Phone Number</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="form-control" required="true" value="" type="text"></div>
-                            </div>
-                         </div>
-                      </fieldset>
-                      <button class="btn btn-primary" type="submit">Aceptar</button>
-                   </form>
-                </td>
-             </tr>
-          </tbody>
-       </table>
-    </div>
+		<form method="post" action="<%=request.getContextPath()%>/secure/servlets/AltaPersonaServlet">
+		  <div class="form-row">
+		  	<h3>Datos personales</h3>
+		  </div>
+		  <div class="form-row">
+		  	<div class="form-group col-md-6">
+		      <label for="nombre">Nombre</label>
+		      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="apellido">Apellido</label>
+		      <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+		    </div>
+		    
+		    <div class="form-group col-md-12">
+		      <label for="inputEmail4">Email</label>
+		      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+		    </div>
+		    <div class="form-group col-md-12">
+		      <label for="documento">Nro documento</label>
+		      <input type="text" class="form-control" id="documento" placeholder="Nro documento - sin puntos">
+		    </div>
+		  </div>
+		  
+		  <div class="form-row">
+		  	<h3>Dirección</h3>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputAddress">Address</label>
+		    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+		  </div>
+		  <div class="form-group">
+		    <label for="inputAddress2">Address 2</label>
+		    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+		  </div>
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="inputCity">City</label>
+		      <input type="text" class="form-control" id="inputCity">
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="inputState">State</label>
+		      <select id="inputState" class="form-control">
+		        <option selected>Choose...</option>
+		        <option>...</option>
+		      </select>
+		    </div>
+		    <div class="form-group col-md-2">
+		      <label for="inputZip">Zip</label>
+		      <input type="text" class="form-control" id="inputZip">
+		    </div>
+		  </div>
+		  <button type="submit" class="btn btn-primary" type="submit">Guardar</button>
+		</form>
+</div>
 
 
 </body>
