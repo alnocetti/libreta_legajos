@@ -27,7 +27,6 @@ public class AltaPersonaServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.sendRedirect(request.getContextPath() + "/secure/jsp/AltaPersona.jsp");
 	}
 
@@ -36,7 +35,17 @@ public class AltaPersonaServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		// doGet(request, response);
+		
+		if (request.getParameter("nombre").equals("a")){
+			request.getSession().setAttribute("status", "success");
+		}else {
+			request.getSession().setAttribute("status", "failure");
+			request.getSession().setAttribute("message", "prueba failure");
+		}
+		
+		response.sendRedirect(request.getContextPath() + "/secure/jsp/AltaPersona.jsp");
+
 	}
 
 }
