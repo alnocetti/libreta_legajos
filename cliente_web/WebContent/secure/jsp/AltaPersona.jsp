@@ -59,47 +59,68 @@
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="apellido">Apellido</label>
-		      <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+		      <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido">
 		    </div>
 		    
 		    <div class="form-group col-md-12">
 		      <label for="inputEmail4">Email</label>
-		      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+		      <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
 		    </div>
 		    <div class="form-group col-md-12">
 		      <label for="documento">Nro documento</label>
-		      <input type="text" class="form-control" id="documento" placeholder="Nro documento - sin puntos">
+		      <input type="number" class="form-control" name="dni" id="documento" placeholder="Nro documento">
 		    </div>
 		  </div>
 		  
 		  <div class="form-row">
 		  	<h3>Dirección</h3>
 		  </div>
-		  <div class="form-group">
-		    <label for="inputAddress">Address</label>
-		    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-		  </div>
-		  <div class="form-group">
-		    <label for="inputAddress2">Address 2</label>
-		    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-		  </div>
 		  <div class="form-row">
-		    <div class="form-group col-md-6">
-		      <label for="inputCity">City</label>
-		      <input type="text" class="form-control" id="inputCity">
-		    </div>
-		    <div class="form-group col-md-4">
-		      <label for="inputState">State</label>
-		      <select id="inputState" class="form-control">
-		        <option selected>Choose...</option>
-		        <option>...</option>
-		      </select>
-		    </div>
-		    <div class="form-group col-md-2">
-		      <label for="inputZip">Zip</label>
-		      <input type="text" class="form-control" id="inputZip">
-		    </div>
-		  </div>
+			  <div class="form-group col-md-6">
+			    <label for="calle">Calle</label>
+			    <input type="text" class="form-control" name="calle" id="calle" placeholder="Córdoba">
+			  </div>
+			  <div class="form-group col-md-6">
+			    <label for="numero">Numero</label>
+			    <input type="number" class="form-control" name="numero" id="numero" placeholder="123">
+			  </div>	
+
+			  <div class="form-group col-md-8">
+			  <label for="entreCalle1">Entre calles</label>
+			  <div class="input-group">
+			    <input type="text" class="form-control" name="entreCalle1" id="entreCalle1" placeholder="Thames">
+				<span class="input-group-addon">-</span>
+			  	<input type="text" class="form-control" name="entreCalle2" id="entreCalle2" placeholder="Serrano">
+			  </div>
+			  </div>
+
+			  <div class="form-group col-md-2">
+			    <label for="piso">Piso</label>
+			    <input type="number" class="form-control" name="piso" id="piso" placeholder="1">
+			  </div>	
+			  <div class="form-group col-md-2">
+			    <label for="dpto">Departamento</label>
+			    <input type="text" class="form-control" name="dpto" id="dpto" placeholder="A">
+			  </div>
+			  <div class="form-row">		 
+				  <div class="form-group col-md-4">
+				    <label for="pais">País</label>
+				    <input type="text" class="form-control" name="pais" id="pais" placeholder="Argentina">
+				  </div>	
+				  <div class="form-group col-md-4">
+				    <label for="provincia">Provincia</label>
+				    <input type="text" class="form-control" name="provincia" id="provincia" placeholder="Buenos Aires">
+				  </div>	
+				  <div class="form-group col-md-4">
+				    <label for="localidad">Localidad</label>
+				    <input type="text" class="form-control" name="localidad" id="localidad" placeholder="CABA">
+				  </div>		
+				    <div class="form-group col-md-2">
+				      <label for="codigoPostal">Código postal</label>
+				      <input type="text" class="form-control" name="codigoPostal" id="codigoPostal">
+				    </div>
+				 </div>
+			</div>
 		  <button type="submit" class="btn btn-primary" type="submit">Guardar</button>
 		</form>
 </div>

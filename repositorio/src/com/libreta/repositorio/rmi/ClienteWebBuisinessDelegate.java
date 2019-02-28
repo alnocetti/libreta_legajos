@@ -33,8 +33,7 @@ public class ClienteWebBuisinessDelegate {
 		
 	}
 	
-	public void addPersona(int id,
-							String nombre,
+	public void addPersona(	String nombre,
 							String apellido,
 							int dni,
 							String calle,
@@ -48,7 +47,6 @@ public class ClienteWebBuisinessDelegate {
 							String pais,
 							String codigo_postal) throws RemoteException {
 		PersonaDto persona = new PersonaDto();
-		persona.setId(id);
 		persona.setNombre(nombre);
 		persona.setApellido(apellido);
 		persona.setDni(dni);
