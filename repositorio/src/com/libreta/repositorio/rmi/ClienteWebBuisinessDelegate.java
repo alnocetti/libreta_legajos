@@ -16,7 +16,7 @@ public class ClienteWebBuisinessDelegate {
 	public ClienteWebBuisinessDelegate() throws MalformedURLException, RemoteException, NotBoundException {
 		super();
 		
-		this.clienteWebRemoteObject = (ClienteWebRemoteObjectTDA) Naming.lookup("//localhost/clienteWebRemoteObjectImp");
+		this.clienteWebRemoteObject = (ClienteWebRemoteObjectTDA) Naming.lookup("//localhost/clienteWebRemoteObjectImpl");
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -33,33 +33,21 @@ public class ClienteWebBuisinessDelegate {
 		
 	}
 	
-	public void addPersona(	String nombre,
-							String apellido,
-							int dni,
-							String calle,
-							String entreCalle1,
-							String entreCalle2,
-							int numero,
-							int piso,
-							String dpto,
-							String localidad,
-							String provincia,
-							String pais,
-							String codigo_postal) throws RemoteException {
-		PersonaDto persona = new PersonaDto();
-		persona.setNombre(nombre);
-		persona.setApellido(apellido);
-		persona.setDni(dni);
-		persona.setCalle(calle);
-		persona.setEntreCalle1(entreCalle1);
-		persona.setEntreCalle2(entreCalle2);
-		persona.setNumero(numero);
-		persona.setPiso(piso);
-		persona.setDpto(dpto);
-		persona.setLocalidad(localidad);
-		persona.setProvincia(provincia);
-		persona.setPais(pais);
-		persona.setCodigo_postal(codigo_postal);
+	public void addPersona(PersonaDto persona) throws RemoteException {
+//		PersonaDto persona = new PersonaDto();
+//		persona.setNombre(nombre);
+//		persona.setApellido(apellido);
+//		persona.setDni(dni);
+//		persona.setCalle(calle);
+//		persona.setEntreCalle1(entreCalle1);
+//		persona.setEntreCalle2(entreCalle2);
+//		persona.setNumero(numero);
+//		persona.setPiso(piso);
+//		persona.setDpto(dpto);
+//		persona.setLocalidad(localidad);
+//		persona.setProvincia(provincia);
+//		persona.setPais(pais);
+//		persona.setCodigo_postal(codigo_postal);
 		
 		this.clienteWebRemoteObject.addPersona(persona);
 	}

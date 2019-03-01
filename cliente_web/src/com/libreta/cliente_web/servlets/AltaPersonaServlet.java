@@ -40,23 +40,23 @@ public class AltaPersonaServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
-//		PersonaDto persona = new PersonaDto();
-//		
-//		persona.setNombre(request.getParameter("nombre"));
-//		persona.setApellido(request.getParameter("apellido"));
-//		persona.setDni(Integer.parseInt(request.getParameter("dni")));
-//		persona.setCalle(request.getParameter("calle"));
-//		persona.setNumero(Integer.parseInt(request.getParameter("numero")));
-//		persona.setEntreCalle1(request.getParameter("entreCalle1"));
-//		persona.setEntreCalle2(request.getParameter("entreCalle2"));
-//		persona.setPiso(Integer.parseInt(request.getParameter("piso")));
-//		persona.setDpto(request.getParameter("dpto"));
-//		persona.setCodigo_postal(request.getParameter("codigoPostal"));
-//		persona.setPais(request.getParameter("pais"));
-//		persona.setProvincia(request.getParameter("provincia"));
-//		persona.setLocalidad(request.getParameter("localidad"));
+		PersonaDto persona = new PersonaDto();
 		
-		ClienteWebBuisinessDelegate.getInstance().addPersona("alan", "nocetti", 37018039, "107", "2", "3", 227, 0, "0", "Berazategui", "Buenos Aires", "Argentina", "1884");
+		persona.setNombre(request.getParameter("nombre"));
+		persona.setApellido(request.getParameter("apellido"));
+		persona.setDni(Integer.parseInt(request.getParameter("dni")));
+		persona.setCalle(request.getParameter("calle"));
+		persona.setNumero(Integer.parseInt(request.getParameter("numero")));
+		persona.setEntreCalle1(request.getParameter("entreCalle1"));
+		persona.setEntreCalle2(request.getParameter("entreCalle2"));
+		persona.setPiso(Integer.parseInt(request.getParameter("piso")));
+		persona.setDpto(request.getParameter("dpto"));
+		persona.setCodigo_postal(request.getParameter("codigoPostal"));
+		persona.setPais(request.getParameter("pais"));
+		persona.setProvincia(request.getParameter("provincia"));
+		persona.setLocalidad(request.getParameter("localidad"));
+		
+		ClienteWebBuisinessDelegate.getInstance().addPersona(persona);
 		
 //		if (request.getParameter("nombre").equals("a")){
 //			request.getSession().setAttribute("status", "success");
