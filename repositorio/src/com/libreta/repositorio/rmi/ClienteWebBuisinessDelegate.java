@@ -34,20 +34,6 @@ public class ClienteWebBuisinessDelegate {
 	}
 	
 	public void addPersona(PersonaDto persona) throws RemoteException {
-//		PersonaDto persona = new PersonaDto();
-//		persona.setNombre(nombre);
-//		persona.setApellido(apellido);
-//		persona.setDni(dni);
-//		persona.setCalle(calle);
-//		persona.setEntreCalle1(entreCalle1);
-//		persona.setEntreCalle2(entreCalle2);
-//		persona.setNumero(numero);
-//		persona.setPiso(piso);
-//		persona.setDpto(dpto);
-//		persona.setLocalidad(localidad);
-//		persona.setProvincia(provincia);
-//		persona.setPais(pais);
-//		persona.setCodigo_postal(codigo_postal);
 		
 		this.clienteWebRemoteObject.addPersona(persona);
 	}

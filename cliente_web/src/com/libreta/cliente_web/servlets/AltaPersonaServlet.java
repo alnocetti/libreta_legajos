@@ -56,15 +56,15 @@ public class AltaPersonaServlet extends HttpServlet {
 		persona.setProvincia(request.getParameter("provincia"));
 		persona.setLocalidad(request.getParameter("localidad"));
 		
-		ClienteWebBuisinessDelegate.getInstance().addPersona(persona);
+		try {
+			
+			ClienteWebBuisinessDelegate.getInstance().addPersona(persona);
+			
+		}catch (Exception e) {
+			response.sendRedirect(request.getContextPath() + "/secure/jsp/AltaPersona.jsp?status=failure&message=" + e.getMessage());
+		}
 		
-//		if (request.getParameter("nombre").equals("a")){
-//			request.getSession().setAttribute("status", "success");
-//		}else {
-//			request.getSession().setAttribute("status", "failure");
-//			request.getSession().setAttribute("message", "prueba failure");
-//		}
-		
+		request.getSession().setAttribute("status", "success");
 		response.sendRedirect(request.getContextPath() + "/secure/jsp/AltaPersona.jsp");
 
 	}

@@ -19,7 +19,6 @@ public class Servidor {
 		
 		LocateRegistry.createRegistry(1099);
 		System.out.println("Server levantado en puerto 1099");
-		System.out.println(System.getProperty("java.classpath"));
 		Naming.rebind("//localhost/clienteWebRemoteObjectImpl", new ClienteWebRemoteObjectImpl());
 
 	}
