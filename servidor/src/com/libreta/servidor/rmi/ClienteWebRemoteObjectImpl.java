@@ -2,6 +2,7 @@ package com.libreta.servidor.rmi;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Set;
 
 import com.libreta.repositorio.dto.PersonaDto;
 import com.libreta.repositorio.rmi.ClienteWebRemoteObjectTDA;
@@ -18,12 +19,16 @@ public class ClienteWebRemoteObjectImpl extends UnicastRemoteObject implements C
 		this.controller = new ClienteWebController();
 		// TODO Auto-generated constructor stub
 	}
-
 	
 	public void addPersona(PersonaDto persona) {
 		System.out.println("<- addPersona()");
 		this.controller.addPersona(persona);
 		
+	}
+	
+	public Set<PersonaDto> getPersonas() {
+		System.out.println("<- getPErsonas()");
+		return this.controller.getPersonas();
 	}
 
 }

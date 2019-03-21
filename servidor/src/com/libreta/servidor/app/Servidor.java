@@ -6,7 +6,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
 import com.libreta.repositorio.dto.PersonaDto;
-import com.libreta.repositorio.rmi.ClienteWebBuisinessDelegate;
+import com.libreta.repositorio.rmi.ClienteWebBusinessDelegate;
 import com.libreta.servidor.rmi.ClienteWebRemoteObjectImpl;
 
 public class Servidor {

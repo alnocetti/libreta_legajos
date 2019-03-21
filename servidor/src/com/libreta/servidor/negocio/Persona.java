@@ -1,5 +1,7 @@
 package com.libreta.servidor.negocio;
 
+import com.libreta.repositorio.dto.PersonaDto;
+
 public class Persona {
 	
 	private int id;
@@ -15,6 +17,10 @@ public class Persona {
 		this.apellido = apellido;
 		this.dni = dni;
 		this.direccion = direccion;
+	}
+
+	public Persona() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {
@@ -55,6 +61,27 @@ public class Persona {
 
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
+	}
+	
+	public PersonaDto toDto() {
+		PersonaDto personaDto = new PersonaDto();
+		
+		personaDto.setApellido(this.apellido);
+		personaDto.setCalle(this.getDireccion().getCalle());
+		personaDto.setCodigo_postal(this.getDireccion().getCodigo_postal());
+		personaDto.setDni(this.getDni());
+		personaDto.setDpto(this.getDireccion().getDpto());
+		personaDto.setEntreCalle1(this.getDireccion().getEntreCalle1());
+		personaDto.setEntreCalle2(this.getDireccion().getEntreCalle2());
+		personaDto.setId(this.getId());
+		personaDto.setLocalidad(this.getDireccion().getLocalidad());
+		personaDto.setNombre(this.getNombre());
+		personaDto.setNumero(this.getDireccion().getNumero());
+		personaDto.setPais(this.getDireccion().getPais());
+		personaDto.setPiso(this.getDireccion().getPiso());
+		personaDto.setProvincia(this.getDireccion().getProvincia());
+		
+		return personaDto;
 	}
 	
 }

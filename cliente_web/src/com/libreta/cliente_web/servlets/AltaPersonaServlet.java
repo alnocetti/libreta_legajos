@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.libreta.repositorio.dto.PersonaDto;
-import com.libreta.repositorio.rmi.ClienteWebBuisinessDelegate;
+import com.libreta.repositorio.rmi.ClienteWebBusinessDelegate;
 
 /**
  * Servlet implementation class AddClienteServlet
@@ -58,7 +58,7 @@ public class AltaPersonaServlet extends HttpServlet {
 		
 		try {
 			
-			ClienteWebBuisinessDelegate.getInstance().addPersona(persona);
+			ClienteWebBusinessDelegate.getInstance().addPersona(persona);
 			
 		}catch (Exception e) {
 			response.sendRedirect(request.getContextPath() + "/secure/jsp/AltaPersona.jsp?status=failure&message=" + e.getMessage());

@@ -18,7 +18,7 @@
         <div id="navbarSupportedContent" class="dropdown-menu">
           <a class="dropdown-item" href="<%=request.getContextPath()%>/secure/servlets/AltaPersonaServlet">Alta</a>
           <a class="dropdown-item" href="#">Modificación</a>
-          <a class="dropdown-item" href="#">Consulta</a>
+          <a class="dropdown-item" href="<%=request.getContextPath()%>/secure/servlets/ConsultaPersonaServlet">Consulta</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Baja</a>
         </div>
